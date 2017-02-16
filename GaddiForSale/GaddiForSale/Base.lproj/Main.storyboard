@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="f2D-qc-swR">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--GaddiForSale-->
+        <scene sceneID="Czv-mn-kYj">
+            <objects>
+                <viewController id="sTN-5b-OqG" customClass="HomeViewController" customModule="GaddiForSale" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2Qo-xg-9fz"/>
+                        <viewControllerLayoutGuide type="bottom" id="YNh-dD-dEg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleAspectFit" id="jdo-gm-cYX">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KfT-AF-pgf">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="KfT-AF-pgf" firstAttribute="leading" secondItem="jdo-gm-cYX" secondAttribute="leading" id="G5B-lS-Dc4"/>
+                            <constraint firstItem="YNh-dD-dEg" firstAttribute="top" secondItem="KfT-AF-pgf" secondAttribute="bottom" id="MaX-4Y-pgV"/>
+                            <constraint firstAttribute="trailing" secondItem="KfT-AF-pgf" secondAttribute="trailing" id="Nd0-Lp-bsm"/>
+                            <constraint firstItem="KfT-AF-pgf" firstAttribute="top" secondItem="2Qo-xg-9fz" secondAttribute="bottom" id="hmK-5A-zk2"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="GaddiForSale" id="ZSw-vS-1TJ">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="MS3-Vv-Zkw">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="wHL-Tm-kYm">
+                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Favorite">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="tableViewOutlet" destination="KfT-AF-pgf" id="WRK-f1-Bdz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xm6-BZ-j1y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="915.94202898550736" y="-131.25"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hyI-Rh-Hs7">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="f2D-qc-swR" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="KPV-IL-eJS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                            <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="sTN-5b-OqG" kind="relationship" relationship="rootViewController" id="7dX-TA-fUq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aLO-ZQ-mS8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8.6956521739130448" y="-131.25"/>
+        </scene>
+    </scenes>
+</document>
