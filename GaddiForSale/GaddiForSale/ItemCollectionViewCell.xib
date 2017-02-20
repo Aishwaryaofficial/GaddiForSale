@@ -18,15 +18,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ygY-BC-4us">
-                        <rect key="frame" x="0.0" y="0.0" width="120" height="20"/>
-                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="17"/>
-                        <color key="textColor" red="0.94568806100000002" green="1" blue="0.49558116229999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </label>
                     <imageView userInteractionEnabled="NO" alpha="0.94999999999999996" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="show1" translatesAutoresizingMaskIntoConstraints="NO" id="mdf-X4-Zo5">
-                        <rect key="frame" x="0.0" y="20" width="120" height="100"/>
+                        <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
                         <color key="backgroundColor" red="1" green="0.60293563159999997" blue="0.56514269429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2mn-tI-3EJ">
@@ -49,17 +42,12 @@
                 <constraint firstAttribute="trailing" secondItem="mdf-X4-Zo5" secondAttribute="trailing" id="748-3y-FQD"/>
                 <constraint firstItem="mdf-X4-Zo5" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="8kr-AX-4th"/>
                 <constraint firstAttribute="bottom" secondItem="mdf-X4-Zo5" secondAttribute="bottom" id="DIv-t1-My9"/>
-                <constraint firstAttribute="trailing" secondItem="ygY-BC-4us" secondAttribute="trailing" id="Fc5-Uc-YHv"/>
-                <constraint firstItem="ygY-BC-4us" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="JY3-L5-ynk"/>
-                <constraint firstItem="ygY-BC-4us" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="czA-Mp-IYk"/>
                 <constraint firstItem="2mn-tI-3EJ" firstAttribute="bottom" secondItem="mdf-X4-Zo5" secondAttribute="bottom" id="e2V-mm-Y0M"/>
-                <constraint firstItem="ygY-BC-4us" firstAttribute="bottom" secondItem="mdf-X4-Zo5" secondAttribute="top" id="qSm-JY-kzM"/>
-                <constraint firstItem="mdf-X4-Zo5" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="20" id="tzh-ck-Sod"/>
+                <constraint firstItem="mdf-X4-Zo5" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="tzh-ck-Sod"/>
                 <constraint firstItem="2mn-tI-3EJ" firstAttribute="trailing" secondItem="mdf-X4-Zo5" secondAttribute="trailing" id="xSR-F1-A3A"/>
             </constraints>
             <connections>
                 <outlet property="itemImage" destination="mdf-X4-Zo5" id="DFr-dG-tk2"/>
-                <outlet property="itemLabel" destination="ygY-BC-4us" id="uyA-I0-ad7"/>
                 <outlet property="likeBtn" destination="2mn-tI-3EJ" id="5ui-eS-i0u"/>
             </connections>
         </collectionViewCell>

@@ -187,9 +187,14 @@ extension HomeVC: UITableViewDataSource, UITableViewDelegate{
        
         if btn.isSelected {
             
-            self.favoriteArray.remove(at: favoriteArray.index(where: { ( a:[IndexPath]) -> Bool in
-            return a == [tableCellIndexPath! , collectionCellIndexPath!]
-            })!)
+//            self.favoriteArray.remove(at: favoriteArray.index(where: { ( a:[IndexPath]) -> Bool in
+//            return a == [tableCellIndexPath! , collectionCellIndexPath!]
+//            })!)
+//            
+            favoriteArray = favoriteArray.filter({ (indices : [IndexPath]) -> Bool in
+                
+                return indices != [tableCellIndexPath! , collectionCellIndexPath!]
+            })
             btn.isSelected = false
             
         } else {
