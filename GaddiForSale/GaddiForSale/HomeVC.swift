@@ -23,6 +23,7 @@ class HomeVC: UIViewController {
     
     var hiddenCellsArray: [IndexPath] = []
     var favoriteArray: [[IndexPath]] = []
+    var hideSection: [Int] = []
     
     // MARK: LIFE CYCLE
     
@@ -58,7 +59,13 @@ class HomeVC: UIViewController {
 extension HomeVC: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        
+        if hideSection.contains(section)
+        {
+            return 0
+        } else {
+            return 5
+        }
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        
@@ -107,6 +114,20 @@ extension HomeVC: UITableViewDataSource, UITableViewDelegate{
     }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
     let header = tableViewOutlet.dequeueReusableHeaderFooterView(withIdentifier: sectionHeader.id) as? ItemCatagories
+        
+        header?.hideButton.addTarget(self, action: #selector(ontabhideSectionBtn(btn:)), for: .touchUpInside)
+        
+        header?.hideButton.tag = section
+        if hideSection.contains(section)
+        {
+            header?.hideButton.isSelected = true
+        }
+        else
+        {
+            header?.hideButton.isSelected = false
+        }
+        
+
         return header
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -200,6 +221,21 @@ extension HomeVC: UITableViewDataSource, UITableViewDelegate{
         
         tableViewOutlet.reloadRows(at: [tableCellIndexPath], with: .fade)
         
+    }
+    
+    func ontabhideSectionBtn(btn:UIButton)  {
+        
+        if btn.isSelected{
+            hideSection = hideSection.filter({ (section) -> Bool in
+                return section != btn.tag
+            })
+             btn.isSelected = false
+        }
+        else{
+            hideSection.append(btn.tag)
+             btn.isSelected = true
+            }
+        self.tableViewOutlet.reloadSections([btn.tag], with: .fade)
     }
     
 }

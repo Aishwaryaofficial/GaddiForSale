@@ -12,5 +12,6 @@ class ItemCatagories: UITableViewHeaderFooterView {
 
     @IBOutlet weak var categoriesOutlet: UILabel!
     
+    @IBOutlet weak var hideButton: UIButton!
             
     }
