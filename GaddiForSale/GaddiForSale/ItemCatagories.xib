@@ -24,7 +24,7 @@
                 </label>
             </subviews>
             <color key="backgroundColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <accessibility key="accessibilityConfiguration" identifier="itemCatagoriesID">
+            <accessibility key="accessibilityConfiguration" identifier="ItemCatagoriesID">
                 <accessibilityTraits key="traits" none="YES"/>
             </accessibility>
             <constraints>

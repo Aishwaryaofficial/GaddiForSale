@@ -12,7 +12,7 @@
         <!--GaddiForSale-->
         <scene sceneID="Czv-mn-kYj">
             <objects>
-                <viewController id="sTN-5b-OqG" customClass="HomeViewController" customModule="GaddiForSale" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeID" id="sTN-5b-OqG" customClass="HomeVC" customModule="GaddiForSale" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2Qo-xg-9fz"/>
                         <viewControllerLayoutGuide type="bottom" id="YNh-dD-dEg"/>
@@ -35,7 +35,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="GaddiForSale" id="ZSw-vS-1TJ">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="MS3-Vv-Zkw">
+                        <barButtonItem key="rightBarButtonItem" style="done" id="MS3-Vv-Zkw">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="wHL-Tm-kYm">
                                 <rect key="frame" x="276" y="7" width="83" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -53,6 +53,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xm6-BZ-j1y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="915.94202898550736" y="-131.25"/>
+        </scene>
+        <!--Full ImageVC-->
+        <scene sceneID="FXB-mh-VY5">
+            <objects>
+                <viewController storyboardIdentifier="FullImageID" id="tlz-OL-JgP" customClass="FullImageVC" customModule="GaddiForSale" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Uhu-sl-a4x"/>
+                        <viewControllerLayoutGuide type="bottom" id="fzG-ij-4yL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleAspectFit" id="Fpg-R9-n1y">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oxY-3q-uK1">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fzG-ij-4yL" firstAttribute="top" secondItem="oxY-3q-uK1" secondAttribute="bottom" id="4Eb-FI-r0P"/>
+                            <constraint firstAttribute="trailing" secondItem="oxY-3q-uK1" secondAttribute="trailing" id="99j-Ne-0JB"/>
+                            <constraint firstItem="oxY-3q-uK1" firstAttribute="top" secondItem="Uhu-sl-a4x" secondAttribute="bottom" id="MCZ-D8-ffa"/>
+                            <constraint firstItem="oxY-3q-uK1" firstAttribute="leading" secondItem="Fpg-R9-n1y" secondAttribute="leading" id="Z2L-fd-XkF"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imagedisplay" destination="oxY-3q-uK1" id="aah-qB-nP7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wrj-MH-Hx1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1661.5999999999999" y="-132.68365817091455"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hyI-Rh-Hs7">

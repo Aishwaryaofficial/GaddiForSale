@@ -11,4 +11,6 @@ import UIKit
 class ItemCatagories: UITableViewHeaderFooterView {
 
     @IBOutlet weak var categoriesOutlet: UILabel!
+    
+            
     }
