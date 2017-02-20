@@ -20,6 +20,7 @@
 		0C938B381E559156000644D1 /* ItemCatagories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C938B371E559156000644D1 /* ItemCatagories.swift */; };
 		0C938B3A1E55919E000644D1 /* ItemCatagories.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C938B391E55919E000644D1 /* ItemCatagories.xib */; };
 		0CCD60511E5894BF00DE78F1 /* Generic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCD60501E5894BF00DE78F1 /* Generic.swift */; };
+		34028CC1736F70E1433BDA95 /* Pods_GaddiForSale.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3A6467C45384B34B3AFE89C /* Pods_GaddiForSale.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,9 @@
 		0C938B371E559156000644D1 /* ItemCatagories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCatagories.swift; sourceTree = "<group>"; };
 		0C938B391E55919E000644D1 /* ItemCatagories.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemCatagories.xib; sourceTree = "<group>"; };
 		0CCD60501E5894BF00DE78F1 /* Generic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Generic.swift; sourceTree = "<group>"; };
+		331D57D7268203C8C5514845 /* Pods-GaddiForSale.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GaddiForSale.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GaddiForSale/Pods-GaddiForSale.debug.xcconfig"; sourceTree = "<group>"; };
+		D3AA300529DE1D0C05C95DE5 /* Pods-GaddiForSale.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GaddiForSale.release.xcconfig"; path = "Pods/Target Support Files/Pods-GaddiForSale/Pods-GaddiForSale.release.xcconfig"; sourceTree = "<group>"; };
+		F3A6467C45384B34B3AFE89C /* Pods_GaddiForSale.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GaddiForSale.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34028CC1736F70E1433BDA95 /* Pods_GaddiForSale.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +61,8 @@
 			children = (
 				0C938B161E558800000644D1 /* GaddiForSale */,
 				0C938B151E558800000644D1 /* Products */,
+				640A5CA8B2C5F96582C2126D /* Pods */,
+				BCC97F009248754A96A762ED /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -88,6 +95,23 @@
 			path = GaddiForSale;
 			sourceTree = "<group>";
 		};
+		640A5CA8B2C5F96582C2126D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				331D57D7268203C8C5514845 /* Pods-GaddiForSale.debug.xcconfig */,
+				D3AA300529DE1D0C05C95DE5 /* Pods-GaddiForSale.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BCC97F009248754A96A762ED /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F3A6467C45384B34B3AFE89C /* Pods_GaddiForSale.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -95,9 +119,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0C938B261E558800000644D1 /* Build configuration list for PBXNativeTarget "GaddiForSale" */;
 			buildPhases = (
+				B88DF1918489E8D3D446EA68 /* [CP] Check Pods Manifest.lock */,
 				0C938B101E558800000644D1 /* Sources */,
 				0C938B111E558800000644D1 /* Frameworks */,
 				0C938B121E558800000644D1 /* Resources */,
+				E05C8DF1AA4CEDDF6349009B /* [CP] Embed Pods Frameworks */,
+				EC79A9DD63FF0018E0765ECD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -156,6 +183,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B88DF1918489E8D3D446EA68 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E05C8DF1AA4CEDDF6349009B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GaddiForSale/Pods-GaddiForSale-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC79A9DD63FF0018E0765ECD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GaddiForSale/Pods-GaddiForSale-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0C938B101E558800000644D1 /* Sources */ = {
@@ -280,6 +355,7 @@
 		};
 		0C938B271E558800000644D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 331D57D7268203C8C5514845 /* Pods-GaddiForSale.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = GaddiForSale/Info.plist;
@@ -292,6 +368,7 @@
 		};
 		0C938B281E558800000644D1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D3AA300529DE1D0C05C95DE5 /* Pods-GaddiForSale.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = GaddiForSale/Info.plist;
