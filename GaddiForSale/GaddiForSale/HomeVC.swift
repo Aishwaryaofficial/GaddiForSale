@@ -7,7 +7,10 @@
 //
 
 import UIKit
-
+import Alamofire
+import SwiftyJSON
+import AlamofireImage
+ 
 class HomeVC: UIViewController {
     
     let sectionHeader = xib(name: "ItemCatagories", id: "ItemCatagoriesID")
@@ -24,6 +27,7 @@ class HomeVC: UIViewController {
     var hiddenCellsArray: [IndexPath] = []
     var favoriteArray: [[IndexPath]] = []
     var hideSection: [Int] = []
+    var dogPicturesData: [ImageInfo] = []
     
     // MARK: LIFE CYCLE
     
@@ -51,6 +55,37 @@ class HomeVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    func fetchData(withQuery query: String) {
+        
+        let URL = "https://pixabay.com/api/"
+        
+        let parameters = ["key" : "4605957-37b558ec4bd8690ce822e16e7",
+                          
+                          "q" : query
+        ]
+        
+        Alamofire.request(URL,
+                          method: .get,
+                          parameters: parameters,
+                          encoding: URLEncoding.default,
+                          headers: nil).responseJSON { (response :DataResponse<Any>) in
+                            
+                            if let value = response.value as? [String:Any] {
+                                
+                                let json = JSON(value)
+                                
+                           //     self.dogPicturesData = json["hits"].array  as? [[String : Any]]
+                                
+                                
+                            } else if let error = response.error {
+                                
+                                print(error)
+                            }
+                            
+        }
+        
+    }
 }
 
 // MARK: extension HomeVC: UITableViewDataSource, UITableViewDelegate
