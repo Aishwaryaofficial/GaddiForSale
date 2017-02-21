@@ -27,7 +27,8 @@ class HomeVC: UIViewController {
     var hiddenCellsArray: [IndexPath] = []
     var favoriteArray: [[IndexPath]] = []
     var hideSection: [Int] = []
-    var dogPicturesData: [ImageInfo] = []
+    //var dogPicturesData: [ImageInfo] = []
+    var dogPicturesData:[JSON] = []
     
     // MARK: LIFE CYCLE
     
@@ -48,6 +49,7 @@ class HomeVC: UIViewController {
         tableViewOutlet.register(categoryNib , forHeaderFooterViewReuseIdentifier: sectionHeader.id)
         
         // Do any additional setup after loading the view.
+        self.fetchData(withQuery: "cats")
     }
 
     override func didReceiveMemoryWarning() {
@@ -73,10 +75,10 @@ class HomeVC: UIViewController {
                             
                             if let value = response.value as? [String:Any] {
                                 
-                                let json = JSON(value)
+                               let json = JSON(value)
                                 
-                           //     self.dogPicturesData = json["hits"].array  as? [[String : Any]]
-                                
+                             self.dogPicturesData = json["hits"].array!
+                                print(self.dogPicturesData)
                                 
                             } else if let error = response.error {
                                 
