@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "6D051AE798ED5F1B57E4B03973A2F6279E81EDE7",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "6D051AE798ED5F1B57E4B03973A2F6279E81EDE7" : 9223372036854775807,
+    "A50580DD6D9403C683B4135A1661FA9FD14145C0" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "AC05798A-6010-4862-B810-320DB40051A1",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "6D051AE798ED5F1B57E4B03973A2F6279E81EDE7" : "GaddiForSale\/",
+    "A50580DD6D9403C683B4135A1661FA9FD14145C0" : "Desktop\/AppInventiv\/ImageSearchEngine\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "GaddiForSale",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "GaddiForSale\/GaddiForSale.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Aishwaryaofficial\/GaddiForSale.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6D051AE798ED5F1B57E4B03973A2F6279E81EDE7"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Aishwaryaofficial\/ImageSearchEngine.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A50580DD6D9403C683B4135A1661FA9FD14145C0"
+    }
+  ]
+}

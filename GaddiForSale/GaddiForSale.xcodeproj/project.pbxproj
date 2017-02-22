@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0C3683861E5719C100E0F66D /* FullImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3683851E5719C100E0F66D /* FullImageVC.swift */; };
-		0C69008E1E55E6DE00A75528 /* JSONDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C69008D1E55E6DE00A75528 /* JSONDictionary.swift */; };
-		0C7A74F61E5B458F00EB416C /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7A74F51E5B458F00EB416C /* Model.swift */; };
+		0C6AAD8C1E5C721F00CF88D3 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6AAD8A1E5C721F00CF88D3 /* NetworkController.swift */; };
+		0C6AAD8D1E5C721F00CF88D3 /* WebServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6AAD8B1E5C721F00CF88D3 /* WebServices.swift */; };
+		0C6AAD8F1E5C723B00CF88D3 /* ImageInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6AAD8E1E5C723B00CF88D3 /* ImageInfoModel.swift */; };
 		0C938B181E558800000644D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C938B171E558800000644D1 /* AppDelegate.swift */; };
 		0C938B1D1E558800000644D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C938B1B1E558800000644D1 /* Main.storyboard */; };
 		0C938B1F1E558800000644D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C938B1E1E558800000644D1 /* Assets.xcassets */; };
@@ -26,8 +27,9 @@
 
 /* Begin PBXFileReference section */
 		0C3683851E5719C100E0F66D /* FullImageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullImageVC.swift; sourceTree = "<group>"; };
-		0C69008D1E55E6DE00A75528 /* JSONDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDictionary.swift; sourceTree = "<group>"; };
-		0C7A74F51E5B458F00EB416C /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		0C6AAD8A1E5C721F00CF88D3 /* NetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkController.swift; path = ../../../Desktop/AppInventiv/ImageSearchEngine/ImageSearchEngine/NetworkController.swift; sourceTree = "<group>"; };
+		0C6AAD8B1E5C721F00CF88D3 /* WebServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebServices.swift; path = ../../../Desktop/AppInventiv/ImageSearchEngine/ImageSearchEngine/WebServices.swift; sourceTree = "<group>"; };
+		0C6AAD8E1E5C723B00CF88D3 /* ImageInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageInfoModel.swift; path = ../../../Desktop/AppInventiv/ImageSearchEngine/ImageSearchEngine/ImageInfoModel.swift; sourceTree = "<group>"; };
 		0C938B141E558800000644D1 /* GaddiForSale.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GaddiForSale.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C938B171E558800000644D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C938B1C1E558800000644D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -79,8 +81,10 @@
 		0C938B161E558800000644D1 /* GaddiForSale */ = {
 			isa = PBXGroup;
 			children = (
+				0C6AAD8E1E5C723B00CF88D3 /* ImageInfoModel.swift */,
+				0C6AAD8A1E5C721F00CF88D3 /* NetworkController.swift */,
+				0C6AAD8B1E5C721F00CF88D3 /* WebServices.swift */,
 				0C938B171E558800000644D1 /* AppDelegate.swift */,
-				0C7A74F51E5B458F00EB416C /* Model.swift */,
 				0C938B291E558ACE000644D1 /* HomeVC.swift */,
 				0C3683851E5719C100E0F66D /* FullImageVC.swift */,
 				0C938B1B1E558800000644D1 /* Main.storyboard */,
@@ -90,7 +94,6 @@
 				0C938B301E558BED000644D1 /* ItemTableViewCell.xib */,
 				0C938B331E558FE3000644D1 /* ItemCollectionViewCell.swift */,
 				0C938B341E558FE3000644D1 /* ItemCollectionViewCell.xib */,
-				0C69008D1E55E6DE00A75528 /* JSONDictionary.swift */,
 				0CCD60501E5894BF00DE78F1 /* Generic.swift */,
 				0C938B231E558800000644D1 /* Info.plist */,
 				0C938B1E1E558800000644D1 /* Assets.xcassets */,
@@ -240,15 +243,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C7A74F61E5B458F00EB416C /* Model.swift in Sources */,
+				0C6AAD8F1E5C723B00CF88D3 /* ImageInfoModel.swift in Sources */,
 				0C938B381E559156000644D1 /* ItemCatagories.swift in Sources */,
 				0C938B311E558BED000644D1 /* ItemTableViewCell.swift in Sources */,
 				0C938B181E558800000644D1 /* AppDelegate.swift in Sources */,
 				0C3683861E5719C100E0F66D /* FullImageVC.swift in Sources */,
-				0C69008E1E55E6DE00A75528 /* JSONDictionary.swift in Sources */,
 				0CCD60511E5894BF00DE78F1 /* Generic.swift in Sources */,
+				0C6AAD8D1E5C721F00CF88D3 /* WebServices.swift in Sources */,
 				0C938B2A1E558ACE000644D1 /* HomeVC.swift in Sources */,
 				0C938B351E558FE3000644D1 /* ItemCollectionViewCell.swift in Sources */,
+				0C6AAD8C1E5C721F00CF88D3 /* NetworkController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +288,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -333,6 +338,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

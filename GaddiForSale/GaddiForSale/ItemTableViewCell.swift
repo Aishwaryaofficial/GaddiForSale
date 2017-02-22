@@ -10,23 +10,20 @@ import UIKit
 
 class ItemTableViewCell: UITableViewCell {
     
-    // MARK: OUTLET
+    // MARK: @IBOutlet
     
     @IBOutlet weak var itemName: UILabel!
     @IBOutlet weak var collectionViewOutlet: UICollectionView!
     @IBOutlet weak var hideButton: UIButton!
     
+    var tableIndexPath : IndexPath?
+    
     // MARK: LIFE CYCLE OF TABLE VIEW CELL
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+       }
+    override func prepareForReuse() {
+        collectionViewOutlet.reloadData()
     }
-
-    
-    // MARK: PRIVATE FUNCTION
-    
-    
 }
-
-

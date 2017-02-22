@@ -12,18 +12,19 @@ class FullImageVC: UIViewController {
 
     //MARK: PROPERTY
     
-    var image: UIImage!
-     
-    // MARK: @IBOutlet
+        var url : URL!
+   // MARK: @IBOutlet
     
     @IBOutlet weak var imagedisplay: UIImageView!
-       
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        imagedisplay.af_setImage(withURL: url)
         //Do any additional setup after loading the view.
     }
+    
     override func viewWillLayoutSubviews() {
-       imagedisplay.image = image
+      
     }
 }

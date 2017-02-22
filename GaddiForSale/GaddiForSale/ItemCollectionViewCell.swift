@@ -7,22 +7,31 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class ItemCollectionViewCell: UICollectionViewCell {
     
-    
-        //MARK:  @IBOutlet
+    //MARK:  @IBOutlet
 
-    @IBOutlet weak var itemLabel: UILabel!
+    
+    @IBOutlet weak var itemlabel: UILabel!
 
     @IBOutlet weak var itemImage: UIImageView!
     
     @IBOutlet weak var likeBtn: UIButton!
     
+    //  VARIABLES
+    
+   
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-      //  imageView.image = image
-        }
+    // Initialization code
+       }
+           override func prepareForReuse() {
+            itemImage.image = nil
+            
+    }
+
     
 }

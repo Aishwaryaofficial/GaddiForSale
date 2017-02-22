@@ -35,7 +35,7 @@ extension UIView {
     
 }
 
-struct xib {
+struct Xib {
     var name : String
     var id : String
     
