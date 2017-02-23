@@ -22,6 +22,7 @@
 		0C938B381E559156000644D1 /* ItemCatagories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C938B371E559156000644D1 /* ItemCatagories.swift */; };
 		0C938B3A1E55919E000644D1 /* ItemCatagories.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C938B391E55919E000644D1 /* ItemCatagories.xib */; };
 		0CCD60511E5894BF00DE78F1 /* Generic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCD60501E5894BF00DE78F1 /* Generic.swift */; };
+		0CFD60D71E5EBA9D00325960 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFD60D61E5EBA9D00325960 /* Data.swift */; };
 		34028CC1736F70E1433BDA95 /* Pods_GaddiForSale.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3A6467C45384B34B3AFE89C /* Pods_GaddiForSale.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		0C938B371E559156000644D1 /* ItemCatagories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCatagories.swift; sourceTree = "<group>"; };
 		0C938B391E55919E000644D1 /* ItemCatagories.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemCatagories.xib; sourceTree = "<group>"; };
 		0CCD60501E5894BF00DE78F1 /* Generic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Generic.swift; sourceTree = "<group>"; };
+		0CFD60D61E5EBA9D00325960 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		331D57D7268203C8C5514845 /* Pods-GaddiForSale.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GaddiForSale.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GaddiForSale/Pods-GaddiForSale.debug.xcconfig"; sourceTree = "<group>"; };
 		D3AA300529DE1D0C05C95DE5 /* Pods-GaddiForSale.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GaddiForSale.release.xcconfig"; path = "Pods/Target Support Files/Pods-GaddiForSale/Pods-GaddiForSale.release.xcconfig"; sourceTree = "<group>"; };
 		F3A6467C45384B34B3AFE89C /* Pods_GaddiForSale.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GaddiForSale.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +96,7 @@
 				0C938B301E558BED000644D1 /* ItemTableViewCell.xib */,
 				0C938B331E558FE3000644D1 /* ItemCollectionViewCell.swift */,
 				0C938B341E558FE3000644D1 /* ItemCollectionViewCell.xib */,
+				0CFD60D61E5EBA9D00325960 /* Data.swift */,
 				0CCD60501E5894BF00DE78F1 /* Generic.swift */,
 				0C938B231E558800000644D1 /* Info.plist */,
 				0C938B1E1E558800000644D1 /* Assets.xcassets */,
@@ -247,6 +250,7 @@
 				0C938B381E559156000644D1 /* ItemCatagories.swift in Sources */,
 				0C938B311E558BED000644D1 /* ItemTableViewCell.swift in Sources */,
 				0C938B181E558800000644D1 /* AppDelegate.swift in Sources */,
+				0CFD60D71E5EBA9D00325960 /* Data.swift in Sources */,
 				0C3683861E5719C100E0F66D /* FullImageVC.swift in Sources */,
 				0CCD60511E5894BF00DE78F1 /* Generic.swift in Sources */,
 				0C6AAD8D1E5C721F00CF88D3 /* WebServices.swift in Sources */,

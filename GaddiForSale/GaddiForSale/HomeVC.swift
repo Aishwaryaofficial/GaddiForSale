@@ -1,4 +1,5 @@
- //
+
+//
 //  HomeVC.swift
 //  GaddiForSale
 //
@@ -24,16 +25,11 @@ class HomeVC: UIViewController {
     
     // DATASOURCE
     
-    var hiddenCellsArray : [IndexPath] = [] // array for storeing IndexPath of collection view cell
-    var favoriteArray : [[IndexPath]] = []  // array for storeing IndexPath of favorite button superview
-    var hideSection : [Int] = []            // array for storeing IndexPath of selected section
-   var picturesData : [[[ImageInfo]]] = []     // array for storeing ImageInfo
+    var hiddenCellsArray : [IndexPath] = [] // array for storing IndexPath of collection view cell
+    var favoriteArray : [[IndexPath]] = []  // array for storing IndexPath of favorite button superview
+    var hideSection : [Int] = []            // array for storing IndexPath of selected section
+   var picturesData : [[[ImageInfo]]] = []     // array for storing ImageInfo
 
-    
-   // var car : [String] = ["BMW","MARUTI","HYUNDAI","FORD", "VOLKSWAGEN"]
-
-  
-    
     // MARK: LIFE CYCLE
     
     override func viewDidLoad() {
@@ -82,8 +78,14 @@ extension HomeVC: UITableViewDataSource, UITableViewDelegate{
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       
+        
+        // Initialization code
+
         guard let cell = tableViewOutlet.dequeueReusableCell(withIdentifier: tableCell.id, for: indexPath) as? ItemTableViewCell else { fatalError("Cell Not Found") }
+        
+        // giveing index to tableIndexPath
+        
+        cell.tableIndexPath = indexPath
         
         if (hiddenCellsArray.contains(indexPath)){
             cell.hideButton.isSelected = true
@@ -92,9 +94,7 @@ extension HomeVC: UITableViewDataSource, UITableViewDelegate{
             {
             cell.hideButton.isSelected = false
             }
-        
-        // Initialization code
-        
+    
         // setting Collection view delegate and datasource
         
         cell.collectionViewOutlet.dataSource = self
@@ -110,16 +110,14 @@ extension HomeVC: UITableViewDataSource, UITableViewDelegate{
         flowLayout.scrollDirection = .horizontal
         cell.collectionViewOutlet.collectionViewLayout = flowLayout
         
-         //  hideButton Action
+        //  hideButton Action
         
         cell.hideButton.addTarget(self, action: #selector(onHideButton(btn:)), for: .touchUpInside)
-       // cell.itemName.text = car[indexPath.section]
         
-        // giveing index to tableIndexPath
-        
-        cell.tableIndexPath = indexPath
-        
-            return cell
+        let dictIndex = Dict.data[indexPath.section]["value"] as! [[String:Any]]
+        cell.itemName.text = dictIndex[indexPath.row]["rowValue"] as? String
+
+        return cell
     
     }
     
@@ -138,6 +136,8 @@ extension HomeVC: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
     let header = tableViewOutlet.dequeueReusableHeaderFooterView(withIdentifier: sectionHeader.id) as? ItemCatagories
         
+        
+        header?.categoriesOutlet.text = Dict.data[section]["sectionValue"] as! String?
         header?.hideButton.addTarget(self, action: #selector(ontabhideSectionBtn(btn:)), for: .touchUpInside)
         
         header?.hideButton.tag = section
@@ -158,41 +158,46 @@ extension HomeVC: UITableViewDataSource, UITableViewDelegate{
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return picturesData.count
+        return Dict.data.count
     }
 
 }
  
  // MARK: extension HomeVC : UICollectionViewDataSource, UICollectionViewDelegate
-  // Collection  View Delegate and Datasource Methods
+
  
  extension HomeVC : UICollectionViewDataSource, UICollectionViewDelegate{
     
+    // Collection  View Delegate and Datasource Methods
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return  picturesData.count
+        guard let tableCell = collectionView.getTableViewCell as? ItemTableViewCell else { fatalError("cell not found")}
+        
+        return   picturesData[(tableCell.tableIndexPath?.section)!][(tableCell.tableIndexPath?.row)!].count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let itemCell = collectionView.dequeueReusableCell(withReuseIdentifier: collectionCell.id, for: indexPath) as?   ItemCollectionViewCell
+        let itemCell = collectionView.dequeueReusableCell(withReuseIdentifier: collectionCell.id, for: indexPath) as!   ItemCollectionViewCell
  
         //  heartButton Action
         
-        itemCell?.likeBtn.addTarget(self, action: #selector(ontablikeBtn(btn:)), for: .touchUpInside)
-        
+        itemCell.likeBtn.addTarget(self, action: #selector(ontablikeBtn(btn:)), for: .touchUpInside)
+    
         // loading images from PicturesData previewURL
         
         guard let tableCell = collectionView.getTableViewCell as? ItemTableViewCell else { fatalError("cell not found")}
         if picturesData.isEmpty{
             print("no data")
         }else {
-        
-            if let url = URL(string: picturesData[(tableCell.tableIndexPath?.section)!][(tableCell.tableIndexPath?.row)!][indexPath.row].previewURL) {
-                   itemCell?.itemImage.af_setImage(withURL : url)
-            }
+            
+                    let imageData = picturesData[(tableCell.tableIndexPath?.section)!][(tableCell.tableIndexPath?.row)!][indexPath.row]
+                    if let url = URL(string: imageData.previewURL) {
+                            itemCell.itemImage.af_setImage(withURL : url)
+                    }
         }
-         return itemCell!
+         return itemCell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -206,6 +211,7 @@ extension HomeVC: UITableViewDataSource, UITableViewDelegate{
         
         let imageShow = self.navigationController?.storyboard?.instantiateViewController(withIdentifier: fullImageVC.id) as! FullImageVC
         
+        // getting super table view
         
         let tablecell = collectionView.getTableViewCell as! ItemTableViewCell
         
@@ -213,8 +219,7 @@ extension HomeVC: UITableViewDataSource, UITableViewDelegate{
         
         let imageData = picturesData[(tablecell.tableIndexPath?.section)!][(tablecell.tableIndexPath?.row)!][indexPath.row]
   
-      imageShow.url = URL(string: imageData.webformatURL)
-        
+        imageShow.url = URL(string: imageData.webformatURL)
         
         self.navigationController?.pushViewController(imageShow, animated: true)
         
@@ -284,35 +289,41 @@ extension HomeVC: UITableViewDataSource, UITableViewDelegate{
     
     func getImage(){
         
-        var count = 1
         //  fetchDataFromPixabay
         
-        for _ in 0...3
+        for section in Dict.data.indices
         {
+            var count = 1
             picturesData.append([])
-            for index in 0...4
+            for (index ,value) in (Dict.data[section]["value"] as! [[String:Any]]).enumerated()
+                
             {
-        
-        Webservices().fetchDataFromPixabay(withQuery: "bmw",
+                picturesData[section].append([])
+
+                Webservices().fetchDataFromPixabay(withQuery: value["rowValue"] as! String,
                                            page: count ,
                                            success: { (images : [ImageInfo]) in
                                             
-        if images.count == 0 {
-        let alert = UIAlertController(title: "Alert", message: "Not Found", preferredStyle: .alert )
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-        }
+                if images.count == 0 {
+                    let alert = UIAlertController(title: "Alert", message: "Not Found", preferredStyle: .alert )
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
                                             
-            self.picturesData[index].append(images)
-           self.tableViewOutlet.reloadData()
+                self.picturesData[section][index] = images
+                self.tableViewOutlet.reloadData()
                                             
-        }) { (error : Error) in
+            },failure:  { (error : Error) in
             
-            let alert = UIAlertController(title: "Alert", message: "No Internet Connection", preferredStyle: .alert )
-            alert.addAction(UIAlertAction(title: "Try again", style: UIAlertActionStyle.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-        }
-                    }
-            count = count + 1
+                        let alert = UIAlertController(title: "Alert", message: "No Internet Connection", preferredStyle: .alert )
+                        alert.addAction(UIAlertAction(title: "Try again", style: UIAlertActionStyle.default, handler: nil))
+                        self.present(alert, animated: true, completion: nil)
+                    })
+                
+                count = count + 1
 
-        }} }
+            }
+
+        }
+    }
+ }

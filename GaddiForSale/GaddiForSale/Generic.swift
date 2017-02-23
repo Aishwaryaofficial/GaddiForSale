@@ -34,6 +34,7 @@ extension UIView {
     }
     
 }
+// structure for storing xib
 
 struct Xib {
     var name : String

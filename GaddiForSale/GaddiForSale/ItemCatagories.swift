@@ -9,6 +9,8 @@
 import UIKit
 
 class ItemCatagories: UITableViewHeaderFooterView {
+    
+    // MARK: @IBOutlet
 
     @IBOutlet weak var categoriesOutlet: UILabel!
     

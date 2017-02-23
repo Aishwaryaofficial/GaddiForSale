@@ -20,18 +20,17 @@ class ItemCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var likeBtn: UIButton!
     
-    //  VARIABLES
-    
-   
-    
+  
     override func awakeFromNib() {
         super.awakeFromNib()
     // Initialization code
-       }
-           override func prepareForReuse() {
-            itemImage.image = nil
-            
     }
-
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+            
+        itemImage.image = nil
+        itemlabel.text = " "
+            
+        }
 }

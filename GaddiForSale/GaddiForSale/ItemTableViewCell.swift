@@ -16,6 +16,8 @@ class ItemTableViewCell: UITableViewCell {
     @IBOutlet weak var collectionViewOutlet: UICollectionView!
     @IBOutlet weak var hideButton: UIButton!
     
+    // variable
+    
     var tableIndexPath : IndexPath?
     
     // MARK: LIFE CYCLE OF TABLE VIEW CELL
@@ -23,7 +25,15 @@ class ItemTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
        }
+    
     override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        // reloadData of collectionViewOutlet
+        
+        itemName.text = " "
         collectionViewOutlet.reloadData()
+        
+        
     }
 }
